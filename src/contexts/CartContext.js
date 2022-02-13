@@ -13,13 +13,9 @@ const CartProvider = (props) => {
       else {
         const newCart = [...cart]
         const newQuantity = cart[indexFound].quantity + quantity
-        newCart.slice(indexFound, 1, {product, newQuantity})
+        newCart[indexFound].quantity = newQuantity
         setCart(newCart)
-      }
-         
-      console.log(cart)
-      console.log(indexFound)
-      
+      }  
     }
    
     
@@ -29,10 +25,14 @@ const CartProvider = (props) => {
       setCart(newCart)
     }
 
-    // const updateQuantity = () => {}
+    const updateQuantity = (index, quantity) => {
+      const newCart = [...cart]
+      newCart[index].quantity = quantity
+      setCart(newCart)
+    }
 
     return(
-        <CartContext.Provider value={{cart, setCart, addProduct, removeProduct}}>
+        <CartContext.Provider value={{cart, setCart, addProduct, removeProduct, updateQuantity}}>
             {props.children}
         </CartContext.Provider>
     )

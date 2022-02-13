@@ -10,7 +10,6 @@ function Summary() {
     const { cart } = useContext(CartContext)
 
     useEffect( () => {
-
         const itemTotal = cart.reduce( ( total, { product: { price }, quantity } ) => total + price*quantity , 0)
         setSubtotal(itemTotal)
     }, [])

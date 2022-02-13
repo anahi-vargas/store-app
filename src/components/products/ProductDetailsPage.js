@@ -37,7 +37,7 @@ function ProductDetailsPage() {
                         <span>{quantity}</span>
                         <button onClick={increaseQuantity}>+</button>
                     </div>
-                    <button onClick={() => addProduct({product, quantity})}>Add to Bag</button>
+                    <button onClick={() => addProduct({product, quantity})}>Add to Cart</button>
                 </ProductDetailsInfo>
                 </>}
         </ProductDetailsContainer>
