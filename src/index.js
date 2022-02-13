@@ -3,25 +3,31 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import ProductsPage from './components/ProductsPage';
-import ProductDetailsPage from "./components/ProductDetailsPage"
-import CartPage from './components/CartPage';
-import CheckoutPage from './components/CheckoutPage';
+import ProductsPage from './components/products/ProductsPage';
+import ProductDetailsPage from "./components/products/ProductDetailsPage"
+import CartPage from './components/cart/CartPage';
+import CheckoutPage from './components/checkout/CheckoutPage';
 import NotFound from './components/NotFound';
+import { ProductsProvider } from './contexts/ProductsContext';
+import { CartProvider } from './contexts/CartContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App/>}>
-          <Route path="products" element={<ProductsPage />} />
-          <Route path="products/:id" element={<ProductDetailsPage />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="checkout" element={<CheckoutPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ProductsProvider>
+      <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App/>}>
+            <Route path="products" element={<ProductsPage />} />
+            <Route path="products/:id" element={<ProductDetailsPage />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      </CartProvider>
+    </ProductsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

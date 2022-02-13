@@ -69,7 +69,6 @@ export const ProductGrid = styled.div`
 export const ProductCard = styled.div`
     width: 20vw;
     height: 40vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,8 +80,11 @@ export const ProductCard = styled.div`
 
     & > div {
         width: 70%;
-        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         padding: 0;
+        color: #24272a;
     }
 `;
 
@@ -90,11 +92,47 @@ export const ProductImage = styled.img`
     width: 50%;
     height: 60%;
     padding: 2.5vh;
-    border: solid;
 `;
 
 export const StyledCategoryList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+
+export const CategoryButton = styled.button`
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 1rem;
+    text-transform: capitalize;
+
+    &:hover {
+        position: relative;
+    }
+
+    &:hover::after {
+        content:'';
+        position:absolute;
+        left: 0;
+        bottom: 0; 
+        width: 100%;
+        border-bottom: 2px solid #000;  
+    }
+
+    &:focus {
+        color: blue;
+    }
+`
+
+export const CategoryNameList = styled.div`
+   
+`;
+
+export const CategoryName = styled.div`
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: capitalize;
 `;

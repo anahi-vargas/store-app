@@ -1,5 +1,5 @@
 import Product from "./Product";
-import { ProductGrid } from "./StyledComponents"
+import { ProductGrid } from "../StyledComponents"
 
 function ProductList(props) {
 

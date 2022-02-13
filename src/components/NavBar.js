@@ -19,9 +19,9 @@ function NavBar() {
             </MenuButton>
             <Logo>FakeStore</Logo>
             <Links active={toggleMenu}>
-                {/* <NavLink className="nav-link" to="/"><FaSearch /></NavLink>
-                <NavLink className="nav-link" to="/"><FaUserCircle /></NavLink>
-                <NavLink className="nav-link" to="/"><FaHeart /></NavLink> */}
+                {/* <NavLink className="nav-link" to="/"><FaSearch /></NavLink> */}
+                <NavLink className="nav-link" to="/checkout"><FaUserCircle /></NavLink>
+                {/* <NavLink className="nav-link" to="/"><FaHeart /></NavLink> */}
                 <NavLink className="nav-link" to="/products">Products</NavLink>
                 <NavLink className="nav-link" to="/cart"><FaShoppingBag /></NavLink>
             </Links>
