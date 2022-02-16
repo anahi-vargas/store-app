@@ -5,8 +5,9 @@ function FilterList() {
     <div>
         <div>Sort By</div>
         <form>
-            <input type="radio" />
-            <input type="radio" />
+            <input type="radio" value="Low" name="sort"/>
+            <input type="radio" value="High" name="sort"/>
+            {/* <input type="radio" value="High" name="sort"/> */}
         </form>
     </div>)
 }

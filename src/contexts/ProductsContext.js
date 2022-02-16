@@ -5,17 +5,22 @@ const ProductsContext = createContext({ products: [] })
 
 const ProductsProvider = (props) => {
     const [products, setProducts] = useState([])
+    const [searchTerm, setSearchTerm] = useState('')
     const [isLoading, setLoading] = useState(true)
 
     useEffect( () => {
+        let mounted = true
         getAllProducts().then(data => {
-          setProducts(data);
-          setLoading(false);
+            if(mounted){
+                setProducts(data);
+                setLoading(false);
+            }
         })
+        return () => { mounted = false };
     }, [])
 
     return (
-        <ProductsContext.Provider value={{products, setProducts, isLoading}}>
+        <ProductsContext.Provider value={{products, setProducts, searchTerm, setSearchTerm, isLoading }}>
             {props.children}
         </ProductsContext.Provider>
     )

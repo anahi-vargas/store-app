@@ -1,5 +1,5 @@
-import { FiCheck } from "react-icons/fi"
-import { ProgressBarStep, ProgressBarCircle, ProgressBarContainer, ProgressBarTitle, ProgressBarCheck } from "./StyledComponents";
+import { BsCheckLg } from "react-icons/bs"
+import { ProgressBarStep, ProgressBarContainer, ProgressBarTitle } from "./StyledComponents";
 
 function ProgressBar(props) {
     const { step, titles} = props
@@ -8,12 +8,7 @@ function ProgressBar(props) {
             {titles.map((title, index) => 
             <ProgressBarStep key={index}>
                 <ProgressBarTitle>{title}</ProgressBarTitle>
-                <div style={{display:"flex", justifyContent:"center"}}>
-                <ProgressBarCircle>
-                    <span>{index+1}</span>
-                </ProgressBarCircle>
-                <ProgressBarCheck><FiCheck /></ProgressBarCheck>
-                </div>
+                {step >= index && <BsCheckLg color="green" />}
             </ProgressBarStep>
             )}
             

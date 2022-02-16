@@ -22,7 +22,7 @@ export const Logo = styled.div`
 export const Links = styled.ul`
     display: flex;
     justify-content: space-around;
-    width: 25vw;
+    width: 35vw;
     margin: 0;
     padding: 0;
 
@@ -135,4 +135,17 @@ export const CategoryName = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
     text-transform: capitalize;
+`;
+
+export const SearchBarContainer = styled.div`
+    display: flex;
+    color: #551A8B;
+
+    > input {
+        background: transparent;
+        color: black;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #551A8B;
+    }
 `;

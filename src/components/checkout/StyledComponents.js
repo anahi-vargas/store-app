@@ -4,31 +4,51 @@ export const CheckoutPageContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-top: 4vh;
-    border: 1px solid black;
     height: 100vh
 `;
 
-export const CheckoutFormContainer = styled.form`
-    border: 1px solid blue;
-    width: 60vw;
-    min-height: 70vh;
-`
-
 export const FormContainer = styled.div`
+    width: 60vw;
+    height: 85vh;
+    margin-top: 5vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 `;
 
-export const ShippingContainer = styled.div`
-
+export const FormTitle = styled.div`
+    font-size: 1.2rem;
+    font-weight: 400;
 `;
 
+export const FormInput = styled.input`
+    width: 100%;
+    height: 5vh;
+    margin-bottom: 3vh;
+`;
 
-export const SummaryContainer = styled.div`
-    border: 1px solid red;    
+export const FormRow = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    > input {
+        width: 48%;
+    }
+`;
+
+export const FormButton = styled.button`
+    background-color: #551A8B;
+    color: #F5f5f5;
+    outline: none;
+    padding: none;
+    cursor: pointer;  
+    border-radius: 25px;
+    width: 12vw;
+    height: 4.5vh;
+    position: absolute;
+    bottom: 12%;
 `;
 
 export const BackButton = styled.button`
@@ -36,7 +56,13 @@ export const BackButton = styled.button`
     background: transparent;
     border: none;
     outline: none;
-    margin-left: 5vh;
+    margin-left: 10vh;
+    align-self: self-start;
+`;
+
+export const FormStepContainer = styled.div`
+    width: 40%;
+    height: 60%;
 `;
 
 export const ProgressBarContainer = styled.div`
@@ -55,31 +81,61 @@ export const ProgressBarTitle = styled.p`
     font-size: 1rem;
 `;
 
-export const ProgressBarLine = styled.div`
-    background: blue;
-    width: 30%;
-`;
-export const ProgressBarCircle = styled.div`
-    width: 25px;
-    height: 25px;
-    border: 2px solid black;
+export const SummaryContainer = styled.div`
+    margin-top: 5vh;
+    width: 30vw;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-    // & > span {
-    //     position: absolute;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    // }
-
-    // &:before, &:after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 29.5vh;
-    //     height: 3px;
-    //     width: 44px;
-    //     background: red;
-    // }
+    div:first-child {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
 `;
 
-export const ProgressBarCheck = styled.div`
-    display: none;
+export const OrderDetailsContainer = styled.div`
+    margin-top: 5vh;
+    width: 30vw;
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    div:first-child {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+    overflow-y: auto;
+`;
+
+export const DetailsContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2vh;
+`;
+
+export const DetailsTitle = styled.div`
+    border-bottom: 1px solid #bbbbbb;
+    margin-bottom: 2vh;
+`;
+
+export const DetailsImage = styled.img`
+    width: 15%;
+    height: 100%;
+`;
+
+export const DetailsInfo = styled.div`
+    width: 60%;
+    div:first-child {
+        font-size: 1rem;
+    }
+    div:last-child {
+        font-size: 0.75rem;
+    }
 `;

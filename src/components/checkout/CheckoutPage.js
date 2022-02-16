@@ -1,12 +1,16 @@
 import CheckoutForm from "./CheckoutForm";
 import { CheckoutPageContainer, SummaryContainer } from "./StyledComponents";
-import Summary from "./Summary";
+import OrderSummary from "./OrderSummary";
+import OrderDetails from "./OrderDetails";
 
 function CheckoutPage() {
     return (  
         <CheckoutPageContainer>
             <CheckoutForm />
-            <Summary />
+            <div>
+                <OrderSummary />
+                <OrderDetails />
+            </div>
         </CheckoutPageContainer>
     );
 }

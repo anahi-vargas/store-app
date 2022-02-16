@@ -18,7 +18,6 @@ const CartProvider = (props) => {
       }  
     }
    
-    
     const removeProduct = (index) => {
       const newCart = [...cart]
       newCart.splice(index, 1)
@@ -31,8 +30,13 @@ const CartProvider = (props) => {
       setCart(newCart)
     }
 
+    const getCartTotal = () => {
+      const itemTotal = cart.reduce( ( total, { product: { price }, quantity } ) => total + price*quantity , 0)
+      return itemTotal
+    }
+
     return(
-        <CartContext.Provider value={{cart, setCart, addProduct, removeProduct, updateQuantity}}>
+        <CartContext.Provider value={{cart, setCart, addProduct, removeProduct, updateQuantity, getCartTotal}}>
             {props.children}
         </CartContext.Provider>
     )

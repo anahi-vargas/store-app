@@ -1,10 +1,8 @@
-import { useState } from "react"
-import { ShippingContainer } from "./StyledComponents";
+import { FormInput, FormRow, FormStepContainer, FormTitle } from "./StyledComponents";
 
-function Shipping() {
-    const [shippingAddress, setShippingAddress] = useState({firstName:"", lastName:"", 
-    address:"", state:"", city:"", zip:""})
+function Shipping(props) {
 
+    const { shippingAddress, setShippingAddress} = props
     const {firstName, lastName, address, state, city, zip } = shippingAddress
 
     const handleChange = (e) => {
@@ -12,25 +10,20 @@ function Shipping() {
         setShippingAddress(prev => ({...prev, [name]: value}))
      }
 
-    console.log(firstName)
-    console.log(lastName)
-
     return ( 
-        <ShippingContainer>
-            <div>Shipping Address</div>
-            <div>
-                <input type="text" placeholder="First Name*" value={firstName} onChange={(e) => setShippingAddress(prev => ({...prev, firstName: e.target.value}))} />
-                <input type="text" placeholder="Last Name*"  value={lastName} onChange={(e) => setShippingAddress(prev => ({...prev, lastName: e.target.value}))} />
-            </div>
-            <input type="text" placeholder="Address*" value={address} onChange={(e) => setShippingAddress(prev => ({...prev, address: e.target.value}))} />
-            <div>
-                <input type="text" placeholder="State" value={state} onChange={(e) => setShippingAddress(prev => ({...prev, state: e.target.value}))} />
-                <input type="text" placeholder="City" value={city} onChange={(e) => setShippingAddress(prev => ({...prev, city: e.target.value}))} />
-            </div>
-            <div>
-                <input type="text" placeholder="Zip Code" value={zip} onChange={(e) => setShippingAddress(prev => ({...prev, zip: e.target.value}))} />
-            </div>
-        </ShippingContainer>
+        <FormStepContainer>
+            <FormTitle>Shipping Address</FormTitle>
+            <FormRow>
+                <FormInput type="text" placeholder="First Name*" name="firstName" value={firstName} onChange={handleChange} />
+                <FormInput type="text" placeholder="Last Name*"  name="lastName" value={lastName} onChange={handleChange} />
+            </FormRow>
+            <FormInput type="text" placeholder="Address*" name="address" value={address} onChange={handleChange} />
+            <FormRow>
+                <FormInput type="text" placeholder="State" name="state" value={state} onChange={handleChange} />
+                <FormInput type="text" placeholder="City" name="city" value={city} onChange={handleChange} />
+            </FormRow>
+            <FormInput type="text" placeholder="Zip Code" name="zip" value={zip} onChange={handleChange} />
+        </FormStepContainer>
      );
 }
 

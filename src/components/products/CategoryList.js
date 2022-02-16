@@ -10,10 +10,14 @@ function CategoryList(props) {
     const handleClick = (category) => setSelectedCategory(category)
     
     useEffect( () => {
+        let mounted = true
         getAllCategories().then(data => {
-            setCategories(data)
-            setLoading(false)
+            if(mounted) {
+                setCategories(data)
+                setLoading(false)
+            }
         })
+        return () => { mounted = false };
     }, [])
 
     return (

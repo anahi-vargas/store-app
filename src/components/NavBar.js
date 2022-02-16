@@ -1,18 +1,18 @@
 import { useContext, useState } from "react"
-import { NavLink } from "react-router-dom";
-import { FaShoppingCart, FaSearch,FaHeart, FaUserCircle } from "react-icons/fa";
+import { NavLink, useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import { Nav, Logo, Links, MenuButton, MenuButtonLine } from "./StyledComponents"
 import { CartContext } from "../contexts/CartContext";
+import SearchBar from "./SearchBar";
 
-function NavBar() {
+function NavBar(props) {
     const [toggleMenu, setToggleMenu] = useState(false)
     const { cart } = useContext(CartContext)
     const totalItems = cart.reduce( ( total, { quantity } ) => total + quantity , 0)
+    let navigate = useNavigate()
 
-    const handleToggleMenu = () => {
-        setToggleMenu(!toggleMenu)
-    }
-
+    const handleToggleMenu = () => setToggleMenu(!toggleMenu)
+    
     return(
         <Nav>
             <MenuButton onClick={handleToggleMenu}>
@@ -20,11 +20,9 @@ function NavBar() {
                 <MenuButtonLine />
                 <MenuButtonLine />
             </MenuButton>
-            <Logo>FakeStore</Logo>
+            <Logo onClick={() => navigate("/")}>FakeStore</Logo>
             <Links active={toggleMenu}>
-                {/* <NavLink className="nav-link" to="/"><FaSearch /></NavLink> */}
-                <NavLink className="nav-link" to="/checkout"><FaUserCircle /></NavLink>
-                {/* <NavLink className="nav-link" to="/"><FaHeart /></NavLink> */}
+                {props.showSearchBar && <SearchBar/>}
                 <NavLink className="nav-link" to="/products">Products</NavLink>
                 <NavLink className="nav-link" to="/cart"><FaShoppingCart /> <span>My Cart</span> ({totalItems})</NavLink>
             </Links>

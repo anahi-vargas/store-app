@@ -17,10 +17,9 @@ code {
 }
 
 :root {
-  --primary-clr: #42413c;
+  --primary-clr: #551A8B;
+  /* --primary-clr: #42413c; */
   --secondary-clr: #c6bfd7;
-  /* --primary-clr: #ff1493;
-  --secondary-clr: #3d3d3d; */
   --primary-font-clr: #F5F5F5;
   --search-bar-size: 40px;
 }
