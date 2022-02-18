@@ -237,6 +237,10 @@ export const ProductDetailsMain = styled.div`
 export const ProductDetailsDescription = styled.div`
     max-width: 100vw;
     overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const DescriptionHeading = styled.div`

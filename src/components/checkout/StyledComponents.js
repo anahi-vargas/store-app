@@ -6,7 +6,7 @@ export const CheckoutPageContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    height: 100vh
+    height: 94vh;
 `;
 
 export const MainContainer = styled(ShadowContainer)`

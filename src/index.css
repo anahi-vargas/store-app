@@ -21,13 +21,9 @@ code {
   --secondary-clr: #8B63E9;
   --progress-bar-clr: #e7dffa;
   --primary-nav-clr: #C6BFD7;
-  /* --primary-nav-clr: #C6BFD7; */
   --secondary-nav-clr: #EAD8EB;
   --primary-font-clr: #F5F5F5;
   --primary-btn-clr: #533b8b;
   --divider-clr: #BBBBBB;
-
-
-  /* --primary-btn-clr: #7f618c ; */
   --search-bar-size: 40px;
 }

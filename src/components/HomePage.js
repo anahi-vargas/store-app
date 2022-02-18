@@ -14,8 +14,6 @@ function HomePage() {
         getSingleProduct(17).then(data => setSecondProduct(data));
     }, [])
 
-    console.log(firstProduct)
-
     return ( 
         <HomePageContainer>
             <div>Free shipping on all orders over $75</div>
