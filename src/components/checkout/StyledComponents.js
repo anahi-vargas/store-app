@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { ShadowContainer } from "../cart/StyledComponents";
+import { Button } from "../products/StyledComponents";
 
 export const CheckoutPageContainer = styled.div`
     display: flex;
@@ -7,25 +9,23 @@ export const CheckoutPageContainer = styled.div`
     height: 100vh
 `;
 
-export const FormContainer = styled.div`
+export const MainContainer = styled(ShadowContainer)`
     width: 60vw;
-    height: 85vh;
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
+    height: 85vh; 
+    padding: 0;
     align-items: center;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 `;
 
 export const FormTitle = styled.div`
     font-size: 1.2rem;
     font-weight: 400;
+    margin-bottom: 0.5vh;
 `;
 
 export const FormInput = styled.input`
     width: 100%;
     height: 5vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1.25vh;
 `;
 
 export const FormRow = styled.div`
@@ -38,17 +38,10 @@ export const FormRow = styled.div`
     }
 `;
 
-export const FormButton = styled.button`
-    background-color: #551A8B;
-    color: #F5f5f5;
-    outline: none;
-    padding: none;
-    cursor: pointer;  
-    border-radius: 25px;
+export const FormButton = styled(Button)`
     width: 12vw;
-    height: 4.5vh;
     position: absolute;
-    bottom: 12%;
+    top: 85vh;
 `;
 
 export const BackButton = styled.button`
@@ -58,17 +51,21 @@ export const BackButton = styled.button`
     outline: none;
     margin-left: 10vh;
     align-self: self-start;
+    display: ${props => props.step === 0 || props.step === 2 ? "none" : "flex"};
 `;
 
-export const FormStepContainer = styled.div`
+export const FormContainer = styled.div`
     width: 40%;
     height: 60%;
+    margin-top: 2vh;
 `;
 
 export const ProgressBarContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 1.5vh;
+    background-color: var(--progress-bar-clr);
 `;
 
 export const ProgressBarStep = styled.div`
@@ -81,53 +78,27 @@ export const ProgressBarTitle = styled.p`
     font-size: 1rem;
 `;
 
-export const SummaryContainer = styled.div`
-    margin-top: 5vh;
+export const SummaryContainer = styled(ShadowContainer)`
     width: 30vw;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    padding: 3vh;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
-    div:first-child {
-        font-weight: 600;
-        font-size: 1.25rem;
-    }
 `;
 
-export const OrderDetailsContainer = styled.div`
-    margin-top: 5vh;
-    width: 30vw;
-    height: 54vh;
-    display: flex;
-    flex-direction: column;
-    padding: 3vh;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
-    div:first-child {
-        font-weight: 600;
-        font-size: 1.25rem;
-    }
+export const OrderDetailsContainer = styled(SummaryContainer)`
+    height: 52vh;
     overflow-y: auto;
 `;
 
 export const DetailsContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
     padding-bottom: 2vh;
 `;
 
-export const DetailsTitle = styled.div`
-    border-bottom: 1px solid #bbbbbb;
-    margin-bottom: 2vh;
-`;
-
 export const DetailsImage = styled.img`
-    width: 15%;
-    height: 100%;
+    width: 10vh;
+    height: 12vh;
 `;
 
 export const DetailsInfo = styled.div`
@@ -137,5 +108,49 @@ export const DetailsInfo = styled.div`
     }
     div:last-child {
         font-size: 0.75rem;
+    }
+`;
+
+export const ConfirmationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5vh;
+    background-color: var(--progress-bar-clr);
+`;
+export const ConfirmationDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    height: 50%;
+`;
+
+export const DetailsHeading = styled.h2`
+    border-bottom: 1px solid #000;
+    font-weight: 500;
+    font-size: 1.25rem;
+    width: 100%;
+    margin: 0 0 2vh 0;
+`;
+
+export const DetailsRow = styled.div`
+    width: 100%;
+    display: flex;
+    margin-bottom: 1vh;
+
+    > span {
+        width: 50%;
+    }
+
+    span:first-child {
+        text-align: Right;
+        margin-right: 3vh;
+    }
+    span:last-child {
+       text-align: left;
     }
 `;

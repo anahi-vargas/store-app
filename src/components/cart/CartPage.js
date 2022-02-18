@@ -4,6 +4,7 @@ import { CartContext } from "../../contexts/CartContext";
 import { FaTrashAlt } from "react-icons/fa"
 import { CartContainer, CartInfo, CartInput, CartTotatPrice, ProductList, ProductListItem, RemoveButton } from "./StyledComponents";
 import CartSummary from "./CartSummary";
+import { NotFoundContainer } from "../StyledComponents";
 
 function CartPage() {
 
@@ -13,7 +14,7 @@ function CartPage() {
     return ( 
         <div>
         {cart.length === 0 ?
-        <div>Cart is Empty</div> :
+        <NotFoundContainer>Your Cart is Empty</NotFoundContainer> :
             <CartContainer>
                 <ProductList>
                     {cart.map( (item, index) =>
@@ -31,7 +32,6 @@ function CartPage() {
                     )}
                 </ProductList>
                 <CartSummary />
-              
             </CartContainer>}
         </div>
      );

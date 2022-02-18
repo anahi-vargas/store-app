@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from "react";
-import { getProductsInCategory } from "../../utils"
+import { getProductsInCategory, sortByPrice } from "../../utils"
 import { ProductsContext } from "../../contexts/ProductsContext";
 import CategoryList from "./CategoryList";
 import Product from "./Product";
-import { ProductGrid } from "../StyledComponents"
+import { ProductGrid } from "./StyledComponents"
 // import FilterList from "./FilterList";
 
 function ProductsPage() {

@@ -1,7 +1,9 @@
 import { useContext, useState } from "react"
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi"
 import { FaShoppingCart } from "react-icons/fa";
-import { Nav, Logo, Links, MenuButton, MenuButtonLine } from "./StyledComponents"
+import { MdClose } from "react-icons/md"
+import { Nav, Logo, Links, NavLinks, MenuButton } from "./StyledComponents"
 import { CartContext } from "../contexts/CartContext";
 import SearchBar from "./SearchBar";
 
@@ -16,15 +18,13 @@ function NavBar(props) {
     return(
         <Nav>
             <MenuButton onClick={handleToggleMenu}>
-                <MenuButtonLine />
-                <MenuButtonLine />
-                <MenuButtonLine />
+                {toggleMenu ? <MdClose fontSize="2rem" /> : <GiHamburgerMenu fontSize="1.5rem" /> }
             </MenuButton>
-            <Logo onClick={() => navigate("/")}>FakeStore</Logo>
+            <Logo onClick={() => navigate("/products")}>FakeStore</Logo>
             <Links active={toggleMenu}>
                 {props.showSearchBar && <SearchBar/>}
-                <NavLink className="nav-link" to="/products">Products</NavLink>
-                <NavLink className="nav-link" to="/cart"><FaShoppingCart /> <span>My Cart</span> ({totalItems})</NavLink>
+                <NavLinks to="/products">Products</NavLinks>
+                <NavLinks to="/cart"><FaShoppingCart /> <span>My Cart</span> ({totalItems})</NavLinks>
             </Links>
         </Nav>
     )

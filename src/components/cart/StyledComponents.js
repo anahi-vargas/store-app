@@ -1,14 +1,31 @@
 import styled from "styled-components"
+import { Button } from "../products/StyledComponents";
 
 export const CartContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
 `;
 
-export const ProductList = styled.div`
+export const ShadowContainer = styled.div`
+    width: 20vw;
+    height: 28vh;
     display: flex;
     flex-direction: column;
+    padding: 3vh;
+    margin-top: 5vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    div:first-child {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+`;
+
+export const ProductList = styled.div`
     width: 50vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     padding: 2vh;
     margin: 5vh 0 5vh 0;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -51,7 +68,7 @@ export const RemoveButton = styled.button`
     border: none;
     outline: none;
     margin: 0;
-    color: #551A8B;
+    color: var(--primary-btn-clr);
     font-size: 1.1rem;
 
     & : hover {
@@ -59,35 +76,17 @@ export const RemoveButton = styled.button`
     }
 `;
 
-export const CheckoutButton = styled.button`
-    background-color: #551A8B;
-    color: #F5f5f5;
-    outline: none;
-    padding: none;
-    cursor: pointer;  
-    border-radius: 25px;
-    width: 8vw;
-    height: 4.5vh;
-    justify-content: center;
-    align-items: center;
+export const CheckoutButton = styled(Button)`
     margin: 2vh 0 2vh 0;
+    position: absolute;
+    top: 28vh;
 `;
 
-export const SummaryContainer = styled.div`
-    margin-top: 5vh;
-    width: 20%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: 3vh;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
-    div:first-child {
-        font-weight: 600;
-        font-size: 1.25rem;
-    }
+export const ContainerTitle = styled.div`
+    border-bottom: 1px solid var(--divider-clr);
+    padding-bottom: 0.25vh;
+    margin-bottom: 1.5vh;
 `;
-
 
 export const SummaryRow = styled.div`
     display: flex;

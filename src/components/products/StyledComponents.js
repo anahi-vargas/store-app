@@ -29,8 +29,8 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImage = styled.img`
-    width: 40%;
-    height: 50%;
+    width: 50%;
+    height: 60%;
     padding: 2.5vh;
 `;
 
@@ -50,13 +50,19 @@ export const StyledCategoryList = styled.div`
     align-items: center;
 `;
 
+export const CategoryListHeading = styled.h1`
+    font-size: 1.5rem;
+    color: var(--primary-clr);
+    margin: 1vh 0 1vh 0;
+`;
+
 export const CategoryButton = styled.button`
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: capitalize;
 
     &:hover {
@@ -69,11 +75,11 @@ export const CategoryButton = styled.button`
         left: 0;
         bottom: 0; 
         width: 100%;
-        border-bottom: 2px solid #000;  
+        border-bottom: 2px solid var(--primary-clr);  
     }
 
     &:focus {
-        color: blue;
+        color: var(--secondary-clr);
     }
 `
 
@@ -165,7 +171,7 @@ export const QuantityButton = styled.div`
 
 export const QuantitySelect = styled.select`
     background: transparent;
-    border-color: #551A8B;
+    border-color: var(--primary-btn-clr);
     border-left-style: none;
     border-right-style: none;
     border-top-style: none;
@@ -178,11 +184,11 @@ export const QuantitySelect = styled.select`
     outline: none;
 `;
 
-export const AddButton = styled.button`
-    background-color: #551A8B;
-    color: #F5f5f5;
+export const Button = styled.button`
+    background-color: var(--primary-btn-clr);
+    color: var(--primary-font-clr);
     outline: none;
-    padding: none;
+    padding: 0;
     cursor: pointer;  
     border-radius: 25px;
     width: 8vw;
@@ -191,13 +197,11 @@ export const AddButton = styled.button`
     align-items: center;
 `;
 
-export const RecommendedContainer = styled.div``;
-
 export const RecommendedHeading = styled.div`
     text-transform: uppercase;
 `;
 
-export const RecommendedProducts = styled.div`
+export const RecommendedItems = styled.div`
     display: flex;
     
 `;

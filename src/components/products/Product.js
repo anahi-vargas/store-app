@@ -1,6 +1,5 @@
-import { ProductCard, ProductImage } from "../StyledComponents";
 import { useNavigate } from "react-router-dom";
-import { ProductPrice, ProductTitle } from "./StyledComponents";
+import { ProductCard, ProductImage, ProductPrice, ProductTitle } from "./StyledComponents";
 
 function Product(props) {
     const { id, image, price, title } = props
@@ -13,7 +12,7 @@ function Product(props) {
         <ProductCard onClick={() => handleClick(id)}>
             <ProductImage src={image} alt={`Product ${title}`} />
             <ProductTitle>{title}</ProductTitle>
-            <ProductPrice>${price}</ProductPrice>
+            <ProductPrice>${price.toFixed(2)}</ProductPrice>
         </ProductCard>)
 }
     

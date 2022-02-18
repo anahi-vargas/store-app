@@ -10,6 +10,7 @@ import CheckoutPage from './components/checkout/CheckoutPage';
 import NotFound from './components/NotFound';
 import { ProductsProvider } from './contexts/ProductsContext';
 import { CartProvider } from './contexts/CartContext';
+import HomePage from './components/HomePage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App/>}>
+            <Route index element={<HomePage/>} />
             <Route path="products" element={<ProductsPage />} />
             <Route path="products/:id" element={<ProductDetailsPage />} />
             <Route path="cart" element={<CartPage />} />

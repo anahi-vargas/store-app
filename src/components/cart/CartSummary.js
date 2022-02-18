@@ -1,19 +1,20 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
-import { CheckoutButton, SummaryContainer, SummaryRow } from "./StyledComponents";
+import { CheckoutButton, ContainerTitle, ShadowContainer, SummaryRow } from "./StyledComponents";
 
 function CartSummary() {
-    const { cart, getCartTotal } = useContext(CartContext)
+    const { getCartTotal, getTotalItems } = useContext(CartContext)
     const total = getCartTotal()
+    const totalItems = getTotalItems()
     let navigate = useNavigate()
 
 
     return ( 
-        <SummaryContainer>
-            <div>Cart Summary</div>
+        <ShadowContainer>
+            <ContainerTitle>Cart Summary</ContainerTitle>
             <SummaryRow> 
-                <span>{cart.length} items</span>
+                <span>{totalItems} items</span>
                 <span>${total.toFixed(2)}</span>
             </SummaryRow>
             <SummaryRow>
@@ -25,7 +26,7 @@ function CartSummary() {
                 <span>TBD</span>
             </SummaryRow>
             <CheckoutButton onClick={() => navigate("/checkout")}>Checkout</CheckoutButton>
-        </SummaryContainer>
+        </ShadowContainer>
      );
 }
 

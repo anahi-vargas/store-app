@@ -9,9 +9,7 @@ function ProgressBar(props) {
             <ProgressBarStep key={index}>
                 <ProgressBarTitle>{title}</ProgressBarTitle>
                 {step >= index && <BsCheckLg color="green" />}
-            </ProgressBarStep>
-            )}
-            
+            </ProgressBarStep>)}
         </ProgressBarContainer>
      );
 }

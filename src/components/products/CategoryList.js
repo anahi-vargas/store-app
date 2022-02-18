@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { CategoryButton, CategoryName, StyledCategoryList } from "./StyledComponents"
 import { getAllCategories } from "../../utils"
+import { CategoryButton, CategoryListHeading, CategoryName, StyledCategoryList } from "./StyledComponents"
 
 function CategoryList(props) {
     const [isLoading, setLoading] = useState(true)
@@ -22,7 +22,7 @@ function CategoryList(props) {
 
     return (
         <StyledCategoryList>
-            <div>Shop By Category</div>
+            <CategoryListHeading>Shop By Category</CategoryListHeading>
             {!isLoading &&
             <div>
                 <CategoryButton onClick={() => handleClick("")}>All</CategoryButton>

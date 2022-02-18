@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { NavLink } from "react-router-dom"
 
 export const Nav = styled.nav`
     display: flex;
@@ -6,7 +7,7 @@ export const Nav = styled.nav`
     align-items: center;
     min-height: 6vh;
     max-height: 8vh;
-    background: var(--secondary-clr);
+    background: var(--primary-nav-clr);
     color: var(--primary-font-clr);
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
@@ -17,6 +18,10 @@ export const Nav = styled.nav`
 
 export const Logo = styled.div`
     font-size: 1.45rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const Links = styled.ul`
@@ -29,9 +34,9 @@ export const Links = styled.ul`
     @media screen and (max-width: 768px) {
         position: absolute;
         right: 0px;
-        height: 12vh;
+        height: 16vh;
         top: 6vh;
-        background-color: #4a4a4a;
+        background-color: var(--secondary-nav-clr);
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -42,13 +47,16 @@ export const Links = styled.ul`
     }
 `;
 
-export const MenuButtonLine = styled.div`
-    background-color: var(--primary-font-clr);
-    width: 25px;
-    height: 2px;
-    margin: 5px;
-    border-radius: 10px;
+export const NavLinks = styled(NavLink)`
+    text-decoration: none;
+
+    &:hover {
+        position: relative;
+        cursor: pointer;
+        color: var(--primary-clr);
+    }
 `;
+
 export const MenuButton = styled.div`
     display: none;
     cursor: pointer;
@@ -58,94 +66,26 @@ export const MenuButton = styled.div`
     }
 `;
 
-export const ProductGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 30vh);
-    grid-gap: 4vh;
-    justify-content: center;
-    align-items: center;
-`;
-
-export const ProductCard = styled.div`
-    width: 20vw;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & : hover {
-        cursor: pointer;
-    }
-
-    & > div {
-        width: 70%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding: 0;
-        color: #24272a;
-    }
-`;
-
-export const ProductImage = styled.img`
-    width: 50%;
-    height: 60%;
-    padding: 2.5vh;
-`;
-
-export const StyledCategoryList = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-export const CategoryButton = styled.button`
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-weight: lighter;
-    font-size: 1rem;
-    text-transform: capitalize;
-
-    &:hover {
-        position: relative;
-    }
-
-    &:hover::after {
-        content:'';
-        position:absolute;
-        left: 0;
-        bottom: 0; 
-        width: 100%;
-        border-bottom: 2px solid #000;  
-    }
-
-    &:focus {
-        color: blue;
-    }
-`
-
-export const CategoryNameList = styled.div`
-   
-`;
-
-export const CategoryName = styled.div`
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-transform: capitalize;
-`;
-
 export const SearchBarContainer = styled.div`
     display: flex;
-    color: #551A8B;
+    color: var(--primary-clr);
 
     > input {
         background: transparent;
         color: black;
         border: none;
         outline: none;
-        border-bottom: 1px solid #551A8B;
+        border-bottom: 1px solid var(--primary-clr);
     }
+`;
+
+export const NotFoundContainer = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30vh;
+    font-size: 2.5rem;
+    color: var(--primary-clr);
 `;

@@ -1,6 +1,8 @@
+import { NotFoundContainer } from "./StyledComponents";
+
 function NotFound() {
     return ( 
-        <div>Page Not Found</div>
+        <NotFoundContainer>Page Not Found</NotFoundContainer>
      );
 }
 

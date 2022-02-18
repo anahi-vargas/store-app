@@ -3,7 +3,7 @@ function FilterList() {
     // sort by rating - low high
     return(
     <div>
-        <div>Sort By</div>
+        <div>Filters</div>
         <form>
             <input type="radio" value="Low" name="sort"/>
             <input type="radio" value="High" name="sort"/>
