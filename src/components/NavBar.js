@@ -20,7 +20,7 @@ function NavBar(props) {
             <MenuButton onClick={handleToggleMenu}>
                 {toggleMenu ? <MdClose fontSize="2rem" /> : <GiHamburgerMenu fontSize="1.5rem" /> }
             </MenuButton>
-            <Logo onClick={() => navigate("/products")}>FakeStore</Logo>
+            <Logo onClick={() => navigate("/")}>FakeStore</Logo>
             <Links active={toggleMenu}>
                 {props.showSearchBar && <SearchBar/>}
                 <NavLinks to="/products">Products</NavLinks>

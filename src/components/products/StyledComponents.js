@@ -28,6 +28,12 @@ export const ProductCard = styled.div`
     }
 `;
 
+export const ProductPageMain = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+`;
+
 export const ProductImage = styled.img`
     width: 50%;
     height: 60%;
@@ -96,10 +102,11 @@ export const CategoryName = styled.div`
 export const ProductDetailsContainer = styled.div`
     margin: auto;
     width: 90vw;
-    height: 100vh;
+    height: 94vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow: hidden;
 `;
 
 export const ProductDetailsInfo = styled.div`
@@ -256,3 +263,10 @@ export const DescriptionParagraph = styled.div`
     }
 `;
 
+export const FilterListForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 25vh;
+    height: 40vh;
+    border: 1px solid black;
+`;

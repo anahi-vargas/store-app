@@ -6,7 +6,7 @@ export const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     min-height: 6vh;
-    max-height: 8vh;
+    max-height: 6vh;
     background: var(--primary-nav-clr);
     color: var(--primary-font-clr);
     font-family: "Poppins", sans-serif;
@@ -81,7 +81,7 @@ export const SearchBarContainer = styled.div`
 
 export const NotFoundContainer = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,3 +89,52 @@ export const NotFoundContainer = styled.div`
     font-size: 2.5rem;
     color: var(--primary-clr);
 `;
+
+export const HomePageContainer = styled.div`
+    height: 92vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 2vh;
+
+    div:first-child {
+        text-transform: uppercase;
+    }
+`;
+
+export const HomeMainContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30vh;
+`;
+
+export const HomePageImage = styled.img`
+    width: 25%;
+    height: auto;
+`;
+
+export const ImageContainer = styled.div`
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    img:first-child {
+        margin: 6vh 6vh 0 0;
+    }
+`;
+
+export const ArrivalsContainer = styled.div`
+    display: flex; 
+    flex-direction: column;
+
+    div:first-child {
+        margin-bottom: 5vh;
+        font-size: 2rem;
+    }
+`;
+

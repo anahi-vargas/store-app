@@ -18,8 +18,8 @@ export const limitResults = async () => {
     return data
 }
 
-export const sortByPrice = async (mode) => {
-    let response = await fetch('https://fakestoreapi.com/products?sort=desc') // asc or desc
+export const sortByID = async (mode) => {
+    let response = await fetch(`https://fakestoreapi.com/products?sort=${mode}`) // asc or desc
     let data = await response.json();
     return data
 }
