@@ -38,10 +38,9 @@ export const FormRow = styled.div`
     }
 `;
 
-export const FormButton = styled(Button)`
+export const FormButton = styled(Button).attrs({type: "submit"})`
     width: 12vw;
-    position: absolute;
-    top: 85vh;
+
 `;
 
 export const BackButton = styled.button`
@@ -54,10 +53,13 @@ export const BackButton = styled.button`
     display: ${props => props.step === 0 || props.step === 2 ? "none" : "flex"};
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
     width: 40%;
-    height: 60%;
+    height: 80%;
     margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const ProgressBarContainer = styled.div`

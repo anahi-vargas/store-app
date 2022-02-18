@@ -1,8 +1,9 @@
 import { BsCheckCircle } from "react-icons/bs"
-import { ConfirmationContainer, ConfirmationDetails, DetailsHeading, DetailsRow } from "./StyledComponents";
+import { ConfirmationContainer, ConfirmationDetails, DetailsHeading, DetailsRow, FormButton } from "./StyledComponents";
 
 function Confirmation(props) {
     const orderDate = new Date().toDateString();
+    const {name, paymentMethod, step, incrementStep} = props
 
     return ( 
         <ConfirmationContainer>
@@ -20,17 +21,20 @@ function Confirmation(props) {
                 </DetailsRow>
                 <DetailsRow>
                     <span>Name</span>
-                    <span>{props.name}</span>
+                    <span>{name}</span>
                 </DetailsRow>
                 <DetailsRow>
                 <span>Payment Method</span>
-                <span>{props.paymentMethod}</span>
+                <span>{paymentMethod}</span>
                 </DetailsRow>
                 <DetailsRow>
                     <span>Total</span>
                     <span>$90</span>
                 </DetailsRow>
             </ConfirmationDetails>
+            <FormButton onClick={(e) => incrementStep(e)}>
+                { step === 0 ? `Continue to Billing` : step === 1 ? `Place Order` : `Continue Shopping`}
+            </FormButton>
         </ConfirmationContainer>
      );
 }

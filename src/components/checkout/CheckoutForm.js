@@ -5,7 +5,7 @@ import Shipping from "./Shipping";
 import Billing from "./Billing";
 import ProgressBar from "./ProgressBar";
 import Confirmation from "./Confirmation";
-import { BackButton, FormButton, MainContainer } from "./StyledComponents";
+import { BackButton, MainContainer } from "./StyledComponents";
 import { CartContext } from "../../contexts/CartContext";
 
 
@@ -17,9 +17,9 @@ function CheckoutForm(props) {
     let navigate = useNavigate()
 
     const displayComponent = () => {
-        const components = [<Shipping shippingAddress={currentAddress} setShippingAddress={setCurrentAddress} stepTitle={stepTitles[0]} />, 
-                            <Billing shippingAddress={currentAddress} stepTitle={stepTitles[1]} creditCard={creditCard} setCreditCard={setCreditCard}  />, 
-                            <Confirmation name={creditCard.cardholderName} paymentMethod={creditCard.cardNumber.slice(12, 16)} />]
+        const components = [<Shipping shippingAddress={currentAddress} setShippingAddress={setCurrentAddress} stepTitle={stepTitles[0]} step={step} incrementStep={incrementStep} />, 
+                            <Billing shippingAddress={currentAddress} stepTitle={stepTitles[1]} creditCard={creditCard} setCreditCard={setCreditCard} step={step} incrementStep={incrementStep}  />, 
+                            <Confirmation name={creditCard.cardholderName} paymentMethod={creditCard.cardNumber.slice(12, 16)} step={step} incrementStep={incrementStep} />]
         return components[step]
     }
 
@@ -46,9 +46,6 @@ function CheckoutForm(props) {
             <FaArrowLeft />
         </BackButton>
         {displayComponent()}
-        <FormButton onClick={incrementStep}>
-            { step === 0 ? `Continue to Billing` : step === 1 ? `Place Order` : `Continue Shopping`}
-        </FormButton>
     </MainContainer>)
 }
 
