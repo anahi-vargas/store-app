@@ -80,6 +80,11 @@ export const CheckoutButton = styled(Button)`
     margin: 2vh 0 2vh 0;
     position: absolute;
     top: 28vh;
+
+    &:active {
+        background-color: var(--secondary-btn-clr);
+        color: black;
+    }
 `;
 
 export const ContainerTitle = styled.div`

@@ -89,10 +89,6 @@ export const CategoryButton = styled.button`
     }
 `
 
-export const CategoryNameList = styled.div`
-   
-`;
-
 export const CategoryName = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
@@ -154,27 +150,7 @@ export const ProductListItem = styled.div`
 export const QuantityHeading = styled.div`
     font-size: 0.9rem;
     margin-top: 2vh;
-    // font-size: 1.05rem;
-    // font-weight: 500;
-    // margin: 1vh 0vh 1vh 0.5vh;
 `;
-
-
-export const QuantityButtonContainer = styled.div`
-    display: flex;
-    border: 1px solid #551A8B;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 8vw;
-    height: 4.75vh;
-    border-radius: 25px;
-    font-size: 1.25rem;
-    margin-right: 2vh;
-`
-
-export const QuantityButton = styled.div`
-    cursor: pointer;
-`
 
 export const QuantitySelect = styled.select`
     background: transparent;
@@ -202,6 +178,11 @@ export const Button = styled.button`
     height: 4.5vh;
     justify-content: center;
     align-items: center;
+
+    &:active {
+        background-color: var(--secondary-btn-clr);
+        color: black;
+    }
 `;
 
 export const RecommendedHeading = styled.div`

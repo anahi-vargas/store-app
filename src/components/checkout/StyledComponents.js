@@ -41,6 +41,10 @@ export const FormRow = styled.div`
 export const FormButton = styled(Button).attrs({type: "submit"})`
     width: 12vw;
 
+    &:active {
+        background-color: var(--secondary-btn-clr);
+        color: black;
+    }
 `;
 
 export const BackButton = styled.button`
